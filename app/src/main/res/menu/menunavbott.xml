@@ -9,4 +9,8 @@
         android:id="@+id/list_menu"
         android:icon="@drawable/ic_baseline_list_24"
         android:title="List Antrian" />
+    <item
+        android:id="@+id/menu_logout"
+        android:icon="@drawable/ic_baseline_login_24"
+        android:title="Logout" />
 </menu>
