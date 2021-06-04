@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0 ; i < users.size() ; i++){
             if (users.get(i).email.equalsIgnoreCase(email) && users.get(i).password.equalsIgnoreCase(password)){
                 fail = true;
+                clear();
                 Intent Home = new Intent(MainActivity.this , HomeActivity.class);
                 startActivityForResult(Home , 100);
                 break;
@@ -54,6 +55,11 @@ public class MainActivity extends AppCompatActivity {
 
 //        Toast.makeText(this , username , Toast.LENGTH_SHORT).show();
 //
+    }
+
+    public void clear(){
+        edt_login_username.setText("");
+        edt_login_password.setText("");
     }
 
     private class LoginUser extends AsyncTask<Void , Void , List<UserData>> {

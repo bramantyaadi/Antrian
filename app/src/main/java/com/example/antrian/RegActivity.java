@@ -51,7 +51,6 @@ public class RegActivity extends AppCompatActivity {
                 catch (Exception e){
                     Toast.makeText(this , "Terjadi Error" , Toast.LENGTH_SHORT).show();
                 }
-
             }
             else {
                 Toast.makeText(this , "Password Tidak Sama Dengan Confirmasi Paswword" , Toast.LENGTH_SHORT).show();
