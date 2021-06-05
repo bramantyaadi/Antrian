@@ -2,6 +2,7 @@ package com.example.antrian;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         edt_login_username = findViewById(R.id.edt_login_username);
         users = new ArrayList<>();
         antriandb = AppDatabase.getDatabase(this);
+        new LoginUser().execute();
     }
 
     public void onClickReg(View v){
@@ -35,10 +37,14 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(Reg , 100);
     }
     public void onClickLogin(View v){
+        final ProgressDialog progres = new ProgressDialog(this);
+        progres.setMessage("Please Wait.......");
+        progres.show();
+
         String email = edt_login_username.getText().toString();
         String password = edt_login_password.getText().toString();
 
-        new LoginUser().execute();
+
         Boolean fail = false;
         for (int i = 0 ; i < users.size() ; i++){
             if (users.get(i).email.equalsIgnoreCase(email) && users.get(i).password.equalsIgnoreCase(password)){
@@ -50,8 +56,10 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         if (fail == false){
+            progres.hide();
             Toast.makeText(MainActivity.this , "Login Gagal Email / Password Salah" , Toast.LENGTH_SHORT).show();
         }
+
 
 //        Toast.makeText(this , username , Toast.LENGTH_SHORT).show();
 //
