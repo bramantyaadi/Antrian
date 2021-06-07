@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         if (fail == false){
-            progres.hide();
+            progres.dismiss();
             Toast.makeText(MainActivity.this , "Login Gagal Email / Password Salah" , Toast.LENGTH_SHORT).show();
         }
 
