@@ -33,6 +33,7 @@ public class Rv_antrian extends RecyclerView.Adapter<Rv_antrian.ItemViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull Rv_antrian.ItemViewHolder holder, int position) {
         holder.tvNomor.setText(listItem.get(position).getNomor_antrian());
+        holder.tvParent_nomor.setText(listItem.get(position).getNomor_antrian());
         holder.tvJamPanggil.setText(listItem.get(position).getJam_dipanggil());
         holder.tvJamBuat.setText(listItem.get(position).getJam_dibuat());
 
@@ -59,9 +60,10 @@ public class Rv_antrian extends RecyclerView.Adapter<Rv_antrian.ItemViewHolder> 
     }
 
     public class ItemViewHolder extends RecyclerView.ViewHolder{
-        TextView tvNomor , tvJamPanggil , tvJamBuat;
+        TextView tvNomor , tvJamPanggil , tvJamBuat , tvParent_nomor;
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);
+            tvParent_nomor = itemView.findViewById(R.id.nomor_antri_parent);
             tvNomor = itemView.findViewById(R.id.nomor_antrian);
             tvJamBuat = itemView.findViewById(R.id.jam_dibuat);
             tvJamPanggil = itemView.findViewById(R.id.jam_dipanggil);
