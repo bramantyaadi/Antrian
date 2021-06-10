@@ -40,7 +40,7 @@ public class Rv_antrian extends RecyclerView.Adapter<Rv_antrian.ItemViewHolder> 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context , listItem.get(position).getNomor_antrian() , Toast.LENGTH_SHORT);
+                Toast.makeText(context , listItem.get(position).getNomor_antrian() , Toast.LENGTH_SHORT).show();
             }
         });
 

@@ -38,25 +38,36 @@ public class RegActivity extends AppCompatActivity {
         UserData userdata = new UserData(email , nama , password);
 
 
-        if (email == "" || password == "" || nama == ""){
-            Toast.makeText(this , "Email / Password / Nama Kosong" , Toast.LENGTH_SHORT).show();
+        if (email.isEmpty() || nama.isEmpty()){
+            Toast.makeText(this , "Email Anda Kosong" , Toast.LENGTH_SHORT).show();
         }
         else {
-            if (password.matches(conf_password)){
-                // Register Disini
-                try {
-                    new RegUser().execute(userdata);
-                    clear();
-                }
-                catch (Exception e){
-                    Toast.makeText(this , "Terjadi Error" , Toast.LENGTH_SHORT).show();
-                }
+            if (password.isEmpty()){
+                Toast.makeText(this , "Password Anda Kosong" , Toast.LENGTH_SHORT).show();
             }
             else {
-                Toast.makeText(this , "Password Tidak Sama Dengan Confirmasi Paswword" , Toast.LENGTH_SHORT).show();
+                if (nama.isEmpty()){
+                    Toast.makeText(this , "Nama Anda Kosong" , Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    if (password.matches(conf_password)){
+                        // Register Disini
+                        try {
+                            new RegUser().execute(userdata);
+                            clear();
+                        }
+                        catch (Exception e){
+                            Toast.makeText(this , "Terjadi Error" , Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                    else {
+                        Toast.makeText(this , "Password Tidak Sama Dengan Confirmasi Paswword" , Toast.LENGTH_SHORT).show();
+                        edt_reg_confirmpassword.setText("");
+                        edt_reg_password.setText("");
+                    }
+                }
             }
         }
-
     }
     public void clear(){
         edt_reg_email.setText("");
