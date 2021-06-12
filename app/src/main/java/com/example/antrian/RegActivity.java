@@ -6,8 +6,10 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 public class RegActivity extends AppCompatActivity {
@@ -25,6 +27,7 @@ public class RegActivity extends AppCompatActivity {
         edt_reg_confirmpassword = findViewById(R.id.edt_reg_confirmpassword);
         btn_reg = findViewById(R.id.btn_reg);
         antriandb = AppDatabase.getDatabase(this);
+
     }
     public void onClickLogin(View v){
         Intent Login = new Intent(RegActivity.this , MainActivity.class);
@@ -32,32 +35,42 @@ public class RegActivity extends AppCompatActivity {
     }
     public void onClickRegister(View v){
         String email = edt_reg_email.getText().toString();
-        String nama = edt_reg_nama.getText().toString();
+        String nama = edt_reg_nama.getText().toString().toLowerCase();
         String password = edt_reg_password.getText().toString();
         String conf_password = edt_reg_confirmpassword.getText().toString();
         UserData userdata = new UserData(email , nama , password);
 
 
-        if (email == "" || password == "" || nama == ""){
-            Toast.makeText(this , "Email / Password / Nama Kosong" , Toast.LENGTH_SHORT).show();
+        if (email.isEmpty() || nama.isEmpty()){
+            Toast.makeText(this , "Email Anda Kosong" , Toast.LENGTH_SHORT).show();
         }
         else {
-            if (password.matches(conf_password)){
-                // Register Disini
-                try {
-                    new RegUser().execute(userdata);
-                    Toast.makeText(this , "Register Berhasil, Silahkan Login!" , Toast.LENGTH_SHORT).show();
-                    clear();
-                }
-                catch (Exception e){
-                    Toast.makeText(this , "Terjadi Error" , Toast.LENGTH_SHORT).show();
-                }
+            if (password.isEmpty()){
+                Toast.makeText(this , "Password Anda Kosong" , Toast.LENGTH_SHORT).show();
             }
             else {
-                Toast.makeText(this , "Password Tidak Sama Dengan Confirmasi Paswword" , Toast.LENGTH_SHORT).show();
+                if (nama.isEmpty()){
+                    Toast.makeText(this , "Nama Anda Kosong" , Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    if (password.matches(conf_password)){
+                        // Register Disini
+                        try {
+                            new RegUser().execute(userdata);
+                            clear();
+                        }
+                        catch (Exception e){
+                            Toast.makeText(this , "Terjadi Error" , Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                    else {
+                        Toast.makeText(this , "Password Tidak Sama Dengan Confirmasi Paswword" , Toast.LENGTH_SHORT).show();
+                        edt_reg_confirmpassword.setText("");
+                        edt_reg_password.setText("");
+                    }
+                }
             }
         }
-
     }
     public void clear(){
         edt_reg_email.setText("");

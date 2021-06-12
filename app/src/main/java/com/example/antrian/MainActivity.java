@@ -50,8 +50,14 @@ public class MainActivity extends AppCompatActivity {
             if (users.get(i).email.equalsIgnoreCase(email) && users.get(i).password.equalsIgnoreCase(password)){
                 fail = true;
                 clear();
-                Intent Home = new Intent(MainActivity.this , HomeActivity.class);
-                startActivityForResult(Home , 100);
+                if (users.get(i).name.equalsIgnoreCase("admin")){
+                    Intent Home = new Intent(MainActivity.this , HomeActivity.class);
+                    startActivityForResult(Home , 100);
+                }
+                if(users.get(i).name.equalsIgnoreCase("petugas")){
+                    Toast.makeText(this , "Belum Ada UI" , Toast.LENGTH_SHORT).show();
+                    progres.dismiss();
+                }
                 break;
             }
         }
