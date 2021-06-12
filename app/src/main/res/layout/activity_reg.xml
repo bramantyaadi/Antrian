@@ -22,11 +22,11 @@
 
     <EditText
         android:id="@+id/edt_reg_email"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginStart="55dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="60dp"
-        android:layout_marginEnd="56dp"
+        android:layout_marginEnd="20dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName"
@@ -38,11 +38,11 @@
 
     <EditText
         android:id="@+id/edt_reg_password"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="44dp"
-        android:layout_marginStart="52dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="22dp"
-        android:layout_marginEnd="59dp"
+        android:layout_marginEnd="20dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
@@ -55,11 +55,11 @@
 
     <EditText
         android:id="@+id/edt_reg_confirmpassword"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginStart="52dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="22dp"
-        android:layout_marginEnd="56dp"
+        android:layout_marginEnd="20dp"
         android:ems="10"
         android:hint="Confirm Password"
         android:inputType="textPassword"
@@ -73,7 +73,7 @@
         android:id="@+id/btn_reg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:onClick="onClickRegister"
         android:text="Register"
@@ -85,26 +85,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="137dp"
-        android:layout_marginTop="22dp"
-        android:layout_marginEnd="58dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
         android:clickable="true"
         android:onClick="onClickLogin"
         android:text="Login"
         android:textColor="#FBFBFB"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/btn_reg"
         app:layout_constraintTop_toBottomOf="@+id/edt_reg_confirmpassword" />
 
     <Spinner
         android:id="@+id/sp_role"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="44dp"
+<<<<<<< Updated upstream
         android:layout_marginStart="52dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="59dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.544"
+=======
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+>>>>>>> Stashed changes
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_reg_email" />
 
