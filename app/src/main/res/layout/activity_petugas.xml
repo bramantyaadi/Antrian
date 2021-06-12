@@ -4,6 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PetugasActivity">
+    tools:context=".PetugasActivity"
+    android:background="@drawable/drawable_purple_gradient">
 
+    <Button
+        android:id="@+id/btn_tambah"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="52dp"
+        android:onClick="onClickTambahTiket"
+        android:text="Tambah Tiket"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

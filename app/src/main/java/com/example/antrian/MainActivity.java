@@ -55,8 +55,8 @@ public class MainActivity extends AppCompatActivity {
                     startActivityForResult(Home , 100);
                 }
                 if(users.get(i).name.equalsIgnoreCase("petugas")){
-                    Toast.makeText(this , "Belum Ada UI" , Toast.LENGTH_SHORT).show();
-                    progres.dismiss();
+                    Intent petugas = new Intent(MainActivity.this , PetugasActivity.class);
+                    startActivity(petugas);
                 }
                 break;
             }
