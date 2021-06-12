@@ -46,6 +46,7 @@ public class RegActivity extends AppCompatActivity {
                 // Register Disini
                 try {
                     new RegUser().execute(userdata);
+                    Toast.makeText(this , "Register Berhasil, Silahkan Login!" , Toast.LENGTH_SHORT).show();
                     clear();
                 }
                 catch (Exception e){
