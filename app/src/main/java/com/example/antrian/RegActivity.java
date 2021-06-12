@@ -65,11 +65,13 @@ public class RegActivity extends AppCompatActivity {
                     // Register Disini
                     try {
                         new RegUser().execute(userdata);
+                        finish();
                         clear();
                         Toast.makeText(this , "Register Berhasil, Silahkan Login!" , Toast.LENGTH_SHORT).show();
                     }
                     catch (Exception e){
-                        Toast.makeText(this , "Terjadi Error" , Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(this , "Terjadi Error" , Toast.LENGTH_SHORT).show();
+                        System.out.println("ERROR CODE : " + e);
                     }
                 }
                 else {

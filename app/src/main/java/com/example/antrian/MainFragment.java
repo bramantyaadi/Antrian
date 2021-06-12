@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -22,6 +23,7 @@ import org.w3c.dom.Text;
 public class MainFragment extends Fragment {
 
     TextView txt_antri;
+    CardView cv_next , cv_refresh;
 
     public MainFragment() {
         // Required empty public constructor
@@ -42,7 +44,29 @@ public class MainFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        // NGODINGE NANG KENE
         txt_antri = view.findViewById(R.id.txt_antrian);
+        cv_next = view.findViewById(R.id.card_next);
+        cv_refresh = view.findViewById(R.id.card_refresh);
+
+        cv_next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onListenerNext();
+            }
+        });
+
+        cv_refresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onListenerRefresh();
+            }
+        });
+    }
+
+    public void onListenerNext(){
+        Toast.makeText(getActivity() , "Next" , Toast.LENGTH_SHORT).show();
+    }
+    public void onListenerRefresh(){
+        Toast.makeText(getActivity() , "Refresh" , Toast.LENGTH_SHORT).show();
     }
 }
