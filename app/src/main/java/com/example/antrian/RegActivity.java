@@ -6,8 +6,10 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 public class RegActivity extends AppCompatActivity {
@@ -25,6 +27,7 @@ public class RegActivity extends AppCompatActivity {
         edt_reg_confirmpassword = findViewById(R.id.edt_reg_confirmpassword);
         btn_reg = findViewById(R.id.btn_reg);
         antriandb = AppDatabase.getDatabase(this);
+
     }
     public void onClickLogin(View v){
         Intent Login = new Intent(RegActivity.this , MainActivity.class);
@@ -32,7 +35,7 @@ public class RegActivity extends AppCompatActivity {
     }
     public void onClickRegister(View v){
         String email = edt_reg_email.getText().toString();
-        String nama = edt_reg_nama.getText().toString();
+        String nama = edt_reg_nama.getText().toString().toLowerCase();
         String password = edt_reg_password.getText().toString();
         String conf_password = edt_reg_confirmpassword.getText().toString();
         UserData userdata = new UserData(email , nama , password);

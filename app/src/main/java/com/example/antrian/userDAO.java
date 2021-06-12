@@ -4,6 +4,7 @@ package com.example.antrian;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
+import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 
@@ -15,7 +16,7 @@ public interface userDAO {
     @Query("SELECT * FROM user")
     List<UserData> getAllUser();
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(UserData... users);
 
     @Update
