@@ -65,9 +65,10 @@ public class RegActivity extends AppCompatActivity {
                     // Register Disini
                     try {
                         new RegUser().execute(userdata);
-                        finish();
                         clear();
                         Toast.makeText(this , "Register Berhasil, Silahkan Login!" , Toast.LENGTH_SHORT).show();
+                        Intent login = new Intent(RegActivity.this , MainActivity.class);
+                        startActivity(login);
                     }
                     catch (Exception e){
 //                        Toast.makeText(this , "Terjadi Error" , Toast.LENGTH_SHORT).show();
@@ -85,7 +86,6 @@ public class RegActivity extends AppCompatActivity {
     public void clear(){
         edt_reg_email.setText("");
         edt_reg_password.setText("");
-        edt_reg_nama.setText("");
         edt_reg_confirmpassword.setText("");
 
     }
