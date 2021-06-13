@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Antrian">
-        <activity android:name=".PetugasActivity"></activity>
+        <activity android:name=".detail_antrian"></activity>
+        <activity android:name=".PetugasActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".RegActivity" />
         <activity android:name=".MainActivity">
