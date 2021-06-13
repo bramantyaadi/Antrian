@@ -56,7 +56,7 @@ public class MainFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         txt_antri = view.findViewById(R.id.txt_antrian);
         cv_next = view.findViewById(R.id.card_next);
-        cv_refresh = view.findViewById(R.id.card_refresh);
+        cv_refresh = view.findViewById(R.id.card_total);
         txt_done = view.findViewById(R.id.txt_done);
         txt_wait = view.findViewById(R.id.txt_wait);
         WaitAndDone();
