@@ -1,6 +1,7 @@
 package com.example.antrian.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.antrian.Detail_antrian;
 import com.example.antrian.R;
 import com.example.antrian.models.Item_antrian;
 
@@ -40,8 +42,14 @@ public class Rv_antrian extends RecyclerView.Adapter<Rv_antrian.ItemViewHolder> 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context , listItem.get(position).getNomor_antrian() , Toast.LENGTH_SHORT).show();
+//                Toast.makeText(context , listItem.get(position).getNomor_antrian() , Toast.LENGTH_SHORT).show();
+                Intent detail = new Intent(context , Detail_antrian.class);
+                detail.putExtra("position" , position);
+                detail.putExtra("item" , listItem.get(position));
+                context.startActivity(detail);
+
             }
+
         });
 
     }
