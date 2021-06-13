@@ -34,4 +34,42 @@
             tools:srcCompat="@tools:sample/avatars" />
     </androidx.cardview.widget.CardView>
 
+    <TextView
+        android:id="@+id/txt_nomor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="A000"
+        android:textAlignment="center"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_detail" />
+
+    <TextView
+        android:id="@+id/txt_jam"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:paddingTop="30dp"
+        android:text="A000"
+        android:textAlignment="center"
+        android:textSize="35sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_nomor" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/txt_jam"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_nomor"
+        app:srcCompat="@mipmap/ic_clock_foreground" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
