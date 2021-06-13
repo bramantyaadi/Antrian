@@ -1,9 +1,11 @@
 package com.example.antrian.services;
 
 import com.example.antrian.models.Item_antrian;
+import com.example.antrian.models.Result_last_call;
 import com.example.antrian.models.Result_next_antrian;
 import com.example.antrian.models.Result_next_ticket;
 import com.example.antrian.models.Result_rv;
+import com.example.antrian.models.Result_wait_done;
 
 import retrofit2.Call;
 import retrofit2.http.FormUrlEncoded;
@@ -22,5 +24,11 @@ public interface APIService {
 
     @PUT("/api/antrian")
     Call<Result_next_antrian> NextAntrian();
+
+    @GET("/api/lastcall/antrian")
+    Call<Result_last_call> lastCall();
+
+    @GET("/api/antrian/wait/done")
+    Call<Result_wait_done> WaitAndDone();
 
 }
