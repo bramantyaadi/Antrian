@@ -110,7 +110,7 @@
         android:layout_marginEnd="20dp"
         android:alwaysDrawnWithCache="false"
         android:animateLayoutChanges="false"
-        android:background="@drawable/custom_input"
+        android:backgroundTintMode="screen"
         android:drawablePadding="8dp"
         android:dropDownSelector="@drawable/ic_spinner"
         android:outlineAmbientShadowColor="@color/black"
